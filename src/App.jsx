@@ -13,7 +13,7 @@ function App() {
           </h1>
 
           <input placeholder='Search movies here'
-          className='w-[650px] p-2 border mb-3 rounded-xl' />
+          className='w-[650px] p-2 border mb-4 rounded-xl' />
       </div>
 
 
