@@ -5,7 +5,7 @@ import MoviesData from '../Data/MoviesData';
 const Movie_List = ({ movies }) => {
 
     const [currentPage, setCurrentPage] =useState(1);
-    const perPage = 8;
+    const perPage = 16;
 
     const startIndex = (currentPage -1) * perPage;
     const lastIndex = startIndex + perPage;
@@ -23,15 +23,15 @@ const Movie_List = ({ movies }) => {
 
   return (
     <div className='w-full flex flex-col justify-center items-center '>
-        <ul className='w-[1300px] grid grid-cols-4 gap-6'>
+        <ul className='w-[1300px] grid grid-cols-8 gap-3'>
             {currentMovies.map((movie, i) => (
                 <li key={movie.id || i}>
-                    <div className='bg-gray-400 p-2 flex flex-col items-center'>
-                    <h1>
+                    <div className='flex flex-col items-center'>
+                    <img src={movie.image}
+                    className='w-[200px] h-[250px] rounded-2xl' />
+                                        <h1>
                      {movie.title}
                     </h1>
-                    <img src={movie.image}
-                    className='w-[250px] h-[250px]' />
                     </div>
                 </li>
             ))}
