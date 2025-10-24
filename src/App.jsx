@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import MoviesData from './Data/MoviesData'
 import Movie_List from './Components/Movie_List';
+import Movie_Card from './Components/Movie_Card';
+Movie_Card
 
 function App() {
 
@@ -13,7 +15,7 @@ function App() {
           </h1>
 
           <input placeholder='Search movies here'
-          className='w-[650px] p-2 mb-4 rounded-xl bg-white' />
+          className='w-[650px] p-4 mb-4 rounded-xl bg-white' />
       </div>
 
 

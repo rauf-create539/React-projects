@@ -60,7 +60,7 @@ const MoviesData = [
     description: "Rival magicians engage in a bitter competition to create the ultimate illusion.",
     releaseDate: "2006-10-20",
     rating: 8.5,
-    image: "https://image.tmdb.org/t/p/w500/5MXyQfz8xUP3dIFPTubhTsbFY6N.jpg"
+    image: "/Images/prestige.jpg"
   },
   {
     title: "Avengers: Endgame",
@@ -74,7 +74,7 @@ const MoviesData = [
     description: "A young drummer pushes his limits under a ruthless music instructor.",
     releaseDate: "2014-10-10",
     rating: 8.5,
-    image: "https://image.tmdb.org/t/p/w500/lIv1QinFqz4dlp5U4lQ6HaiskOZ.jpg"
+    image: "/Images/whiplash.jpg"
   },
   {
     title: "The Social Network",
@@ -110,7 +110,7 @@ const MoviesData = [
     description: "The story of J. Robert Oppenheimer and his role in the creation of the atomic bomb.",
     releaseDate: "2023-07-21",
     rating: 8.6,
-    image: "https://image.tmdb.org/t/p/w500/bAFmcrHSCrXhBic8aZ1A0T6bKu3.jpg"
+    image: "/Images/Oppenheimer_(film).jpg"
   },
   {
     title: "The Batman",
@@ -159,7 +159,7 @@ const MoviesData = [
     description: "A young blade runner uncovers a secret that could change society forever.",
     releaseDate: "2017-10-06",
     rating: 8.0,
-    image: "https://image.tmdb.org/t/p/w500/aMpyrCizvS9y9Tz8VnF8X8hm0vF.jpg"
+    image: "/Images/bladerunner.jpg"
   },
   {
     title: "Her",
@@ -173,7 +173,7 @@ const MoviesData = [
     description: "A frontiersman fights for survival after being mauled by a bear and left for dead.",
     releaseDate: "2015-12-25",
     rating: 8.0,
-    image: "https://image.tmdb.org/t/p/w500/oXUWEc5i3wYyFnL1Ycu8ppxxPvs.jpg"
+    image: "/Images/revenant_584x800_6d98d1b6.jpeg"
   },
   {
     title: "1917",
@@ -194,7 +194,7 @@ const MoviesData = [
     description: "A legendary concierge and his protégé become entangled in the theft of a priceless painting.",
     releaseDate: "2014-03-28",
     rating: 8.1,
-    image: "https://image.tmdb.org/t/p/w500/nX5XotM9yprCKarRH4fzOq1VM1J.jpg"
+    image: "/Images/grandbudapest.jpg"
   },
   {
     title: "Shutter Island",
