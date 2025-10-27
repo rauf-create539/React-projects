@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import MoviesData from '../Data/MoviesData';
 import Movie_Card from './Movie_Card';
 import Pagination from './Pagination';
-import Add_Movies from './Utils/Add_Movies';
+import AddBtn from './Utils/AddBtn';
+
 
 
 const Movie_List = () => {
@@ -17,10 +18,16 @@ const Movie_List = () => {
     const currentMovies = movies.slice(startIndex, lastIndex);
 
   return (
-    <div className='w-full flex flex-col justify-center items-center '>
+    <div className='w-full flex flex-col justify-center items-center'>
+      <div className='mb-4 mt-4'>
+        <h1 className='text-2xl '>My Movie List</h1>
+      </div>
+
         <p className='w-[1300px] text-center mb-4 text-gray-600'>myflixer, watch online movies, movies streaming free, free movies, free full hd movies, watch series online, watch full movies free, download movies hd, series online free, series online hd, watch series online free.</p>
         <div className='mb-4'>
-         <Add_Movies movies={movies} setMovies={setMovies} />
+        </div>
+        <div className='mb-4'>
+          <AddBtn />
         </div>
         <Movie_Card currentMovies={currentMovies}/>
         <Pagination currentPage={currentPage}

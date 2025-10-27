@@ -1,6 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Movie_Card = ({ currentMovies }) => {
+
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+    navigate(`/movie/${id}`);
+  };
 
   return (
     <div>
@@ -10,6 +18,7 @@ const Movie_Card = ({ currentMovies }) => {
                 <li key={movie.id || i}>
                     <div className='flex flex-col items-center'>
                     <img src={movie.image}
+                    onClick={() => handleClick(movie.id)}
                     className='w-[200px] h-[250px] rounded-2xl hover:opacity-0 transition-opacity duration-300 grain' />
                     <h1>
                      {movie.title}
