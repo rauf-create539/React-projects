@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
 import MoviesData from './Data/MoviesData'
 import Movie_List from './Components/Movie_List';
 import Movie_Card from './Components/Movie_Card';
@@ -8,58 +8,32 @@ Movie_Card
 function App() {
 
   return (
+    <BrowserRouter>
     <>
-    <header className='w-full bg-blue-500 p-2 flex justify-center gap-6 items-center mb-6'>
+
+    <header>
       <div>
-          <h1 className='text-center mt-4 mb-2'>
-              My Movie List
-          </h1>
-
-          <input placeholder='Search movies here'
-          className='w-[650px] p-4 mb-4 rounded-xl bg-white' />
+        <h1>My Movie List</h1>
       </div>
-
-
     </header>
-  
-  <Movie_List  movies={MoviesData}/>
+
+    <nav>
+      <NavLink to="/" end className={({isActive}) => (isActive ? 'text-blue-600 font-bold' : 'text-black font-normal')}>
+      Home
+      </NavLink>
+      <NavLink to="/about" className={({isActive}) => (isActive ? 'text-blue-600 font-bold' : 'text-black font-normal')}>
+      About
+      </NavLink>
+    </nav>
+
+    <Routes>
+      <Route path="/" element={<Movie_List movies={MoviesData} />} />
+      <Route path="/about" element={<Abort />} />
+    </Routes>
 
 
-  	<div>
-  	<nav>
-    	<NavLink to="/" end>Home</NavLink>
-    	{" | "}
-    	<NavLink to="/about">About</NavLink>
-  	</nav>
-
-  	<Routes>
-    	<Route path="/" element={<Home title="Welcome!" />} />
-    	<Route path="/about" element={<About />} />
-  	</Routes>
-
-      <footer className='flex justify-around mt-10 bg-black p-6 text-white items-center'>
-    <div>
-        <h1>Movie-App</h1>
-    </div>
-
-    <div>
-      <p className='w-[700px] text-gray-300 text-sm'>Free Movies streaming site with zero ads. We let you watch movies online without having to register or paying, with over 10000 movies and TV-Series. You can also Download full movies from MyFlixer and watch it later if you want.</p>
-      <ul className='flex gap-5 mt-2 font-semibold'>
-        <li>Terms of Service</li>
-        <li>Contact</li>
-        <li>Sitemap</li>
-      </ul>
-    </div>
-
-    <div>
-      <p className='w-[400px] font-light border border-gray-300 p-3 text-xs'>
-         Movie-app does not store any files on our server, we only linked to the media which is hosted on 3rd party services.
-      </p>
-    </div>
-  </footer>
-
-	</div>
     </>
+    </BrowserRouter>
   );
 }
 
