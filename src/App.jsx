@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import MoviesData from './Data/MoviesData'
 import Movie_List from './Components/Movie_List';
 import Movie_Card from './Components/Movie_Card';
@@ -23,7 +24,20 @@ function App() {
   
   <Movie_List  movies={MoviesData}/>
 
-  <footer className='flex justify-around mt-10 bg-black p-6 text-white items-center'>
+
+  	<div>
+  	<nav>
+    	<NavLink to="/" end>Home</NavLink>
+    	{" | "}
+    	<NavLink to="/about">About</NavLink>
+  	</nav>
+
+  	<Routes>
+    	<Route path="/" element={<Home title="Welcome!" />} />
+    	<Route path="/about" element={<About />} />
+  	</Routes>
+
+      <footer className='flex justify-around mt-10 bg-black p-6 text-white items-center'>
     <div>
         <h1>Movie-App</h1>
     </div>
@@ -43,6 +57,8 @@ function App() {
       </p>
     </div>
   </footer>
+
+	</div>
     </>
   );
 }
