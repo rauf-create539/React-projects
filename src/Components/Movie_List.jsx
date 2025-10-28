@@ -6,9 +6,10 @@ import AddBtn from './Utils/AddBtn';
 
 
 
-const Movie_List = () => {
+const Movie_List = ({ onAdd }) => {
 
-    const [movies, setMovies] = useState(MoviesData);
+  const initialMovies = [...MoviesData, ...(JSON.parse(localStorage.getItem("movies")) || [])];
+  const [movies, setMovies] = useState(initialMovies);
 
     const [currentPage, setCurrentPage] =useState(1);
     const perPage = 16;
@@ -31,7 +32,7 @@ const Movie_List = () => {
         </div>
         <Movie_Card currentMovies={currentMovies}/>
         <Pagination currentPage={currentPage}
-        totalPages={Math.ceil(MoviesData.length / perPage)}
+        totalPages={Math.ceil(movies.length / perPage)}
         onNext={() => setCurrentPage(currentPage + 1)}
         onPrev={() => setCurrentPage(currentPage - 1)}
       />

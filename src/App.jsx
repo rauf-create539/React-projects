@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, NavLink} from 'react-router-dom';
 import MoviesData from './Data/MoviesData'
 import Movie_List from './Components/Movie_List';
 import Movie_Card from './Components/Movie_Card';
@@ -11,9 +11,14 @@ Movie_Card
 
 function App() {
 
+  const [movies, setMovies] = useState([]);
+
+  const addMovies = (newMovies) => {
+    setMovies([...movies, newMovies]);
+  };
+
   return (
     <>
-
     <header className='w-full bg-blue-500 flex gap-3.5 p-6'>
 
       <nav className='flex gap-5 ml-23'>
@@ -30,14 +35,13 @@ function App() {
 
     </header>
 
-    <Routes>
-      <Route path="/" element={<Movie_List movies={MoviesData} />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/favorites" element={<Favorites /> } />
-      <Route path="/add_movies" element={<Add_Movies />} />
-      <Route path="/movie/:id" element={<MovieDetails />} />
-    </Routes>
-
+      <Routes>
+        <Route path="/" element={<Movie_List movies={[...MoviesData, ...(JSON.parse(localStorage.getItem("movies")) || [])]} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/favorites" element={<Favorites /> } />
+        <Route path="/add_movies" element={<Add_Movies />} />
+        <Route path='/movie/:id' element={<MovieDetails />} />
+      </Routes>
 
   <footer className='flex justify-around mt-10 bg-black p-6 text-white items-center'>
     <div>
@@ -59,7 +63,6 @@ function App() {
       </p>
     </div>
   </footer>
-
     </>
   );
 }
